@@ -23,7 +23,9 @@ let package = Package(
     targets: [
         .target(
             name: "Auth0", 
-            dependencies: ["SimpleKeychain", "JWTDecode"], 
+            dependencies: [
+              .product(name: "SimpleKeychain", package: "SimpleKeychain"),
+              .product(name: "JWTDecode", package: "JWTDecode")],
             path: "Auth0",
             exclude: ["Info.plist"],
             swiftSettings: swiftSettings),
